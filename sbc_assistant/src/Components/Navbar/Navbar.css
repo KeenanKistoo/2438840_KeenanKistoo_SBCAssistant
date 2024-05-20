@@ -1,0 +1,34 @@
+nav.nav-bar {
+    position: relative;
+    width: 80vw;
+    background-color: rgba(0, 0, 0, 0.792);
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:  0; 
+    height: auto;
+    display: grid;
+    grid-template-columns: 30% repeat(6, 1fr);
+    justify-items: start; /* Center items horizontally */
+    align-items: baseline; /* Center items vertically */
+}
+
+
+h1.main-head{
+    color: white;
+    font-size: 1.8rem;
+    padding-left: 1rem;
+}
+
+.link{
+    color: white;
+    border: 1px solid white;
+    padding: 0.3rem;
+    width: 85%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.link:hover{
+    background-color: rgba(255, 255, 255, 0.405);
+}
