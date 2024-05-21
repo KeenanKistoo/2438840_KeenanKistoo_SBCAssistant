@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../DropdownRating/DropdownRating.css';
+import '../DropdownCount/DropdownCount.css'
 
-export default function DropdownRating(props) {
+
+ function DropdownCount(props) {
     const [toggle, setToggle] = useState(true); //Stores the bool to identify whether the dropdown menu is open or not
     const dropdownRef = useRef(null); //Identiies the dropdown obj
 
@@ -32,32 +33,25 @@ export default function DropdownRating(props) {
 
     /* I needed to reference the rating as a parameter to access/change the selectedRating state
     from my Assistant.jsx. This function selects the rating */
-    function handleRating(rating) {
-        props.setSelectedRating(rating); // Use props.setSelectedRating to update state
+    function handleCount(count) {
+        props.setSelectedPlayerCount(count); // Use props.setSelectedRating to update state
         handleToggle();
-        console.log(rating);
+        console.log(count);
     }
 
     return (
         <section className="dropdown" ref={dropdownRef}>
             <button className="toggle" onClick={handleToggle}>
-                <span>{props.selectedRating ? props.selectedRating : 'Select SBC Rating'}</span>
+                <span>{props.selectedPlayerCount ? props.selectedPlayerCount: 'Select No. of Available Cards'}</span>
                 <span className='arrows'>{toggle ? '🠻' : '🠹'}</span>
             </button>
             <section className={`options ${toggle ? 'invisible' : ''}`}>
-                {props.ratings.map((rating, index) => (
-                    <button onClick={() => handleRating(rating)} key={index}>{rating}</button>
+                {props.playerCount.map((count, index) => (
+                    <button onClick={() => handleCount(count)} key={index}>{count}</button>
                 ))}
             </section>
         </section>
     );
-}
+  }
 
-/* The basic structure was used from Jacob Broughton's YouTube Video (https://www.youtube.com/watch?v=qb70Epml9X0).
-    This video was useful to give my dropdown basic functionality, however it did not use props. I had to alter the
-    code to ensure that all my inputs/outputs were available to use in the assistant instead of having to constantly
-    cross reference values. 
-
-    I have chosen to not use a context system for this. The only two aspects which are affected are the two dropdown
-    components and the assistants. I felt that props were efficient enough to control this. 
-*/
+  export default DropdownCount;

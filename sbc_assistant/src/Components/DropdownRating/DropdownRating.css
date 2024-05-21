@@ -1,0 +1,25 @@
+section.dropdown{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    position: relative;
+    border-radius: 5px;
+    align-self: center;
+}
+
+section.options{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* opacity: 0;
+    visibility: hidden; */
+    transition: 0.2s ease-in;
+}
+
+.invisible{
+    transition: 0.2s ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
