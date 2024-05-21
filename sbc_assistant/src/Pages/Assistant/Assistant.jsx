@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../Assistant/Assistant.css';
 import DropdownRating from '../../Components/DropdownRating/DropdownRating';
 import DropdownCount from '../../Components/DropdownCount/DropdownCount';
+import Confirm from '../../Components/Confirm/Confirm';
 
 function Assistant() {
     //Rating controllers
@@ -34,6 +35,10 @@ function Assistant() {
                     />
                   </section>
                 </section>
+                <Confirm
+                  selectedRating={selectedRating}
+                  selectedPlayerCount={selectedPlayerCount}
+                />
             </main>
         </>
     );
