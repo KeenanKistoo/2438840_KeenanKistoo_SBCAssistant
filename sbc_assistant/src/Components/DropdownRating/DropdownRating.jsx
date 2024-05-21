@@ -41,7 +41,7 @@ export default function DropdownRating(props) {
     return (
         <section className="dropdown" ref={dropdownRef}>
             <button className="toggle" onClick={handleToggle}>
-                <span>{props.selectedRating ? props.selectedRating : 'Select SBC Rating'}</span>
+                <span>{props.selectedRating ? props.selectedRating : 'SBC Rating'}</span>
                 <span className='arrows'>{toggle ? '🠻' : '🠹'}</span>
             </button>
             <section className={`options ${toggle ? 'invisible' : ''}`}>

@@ -42,7 +42,7 @@ import '../DropdownCount/DropdownCount.css'
     return (
         <section className="dropdown" ref={dropdownRef}>
             <button className="toggle" onClick={handleToggle}>
-                <span>{props.selectedPlayerCount ? props.selectedPlayerCount: 'Select No. of Available Cards'}</span>
+                <span>{props.selectedPlayerCount ? props.selectedPlayerCount: 'No. of Available Cards'}</span>
                 <span className='arrows'>{toggle ? '🠻' : '🠹'}</span>
             </button>
             <section className={`options ${toggle ? 'invisible' : ''}`}>
