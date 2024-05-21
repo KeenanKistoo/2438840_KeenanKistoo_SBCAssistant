@@ -41,13 +41,14 @@ import '../DropdownCount/DropdownCount.css'
 
     return (
         <section className="dropdown" ref={dropdownRef}>
-            <button className="toggle" onClick={handleToggle}>
+            <button className="toggle" onClick={() => {handleToggle()}}>
                 <span>{props.selectedPlayerCount ? props.selectedPlayerCount: 'No. of Available Cards'}</span>
                 <span className='arrows'>{toggle ? '🠻' : '🠹'}</span>
             </button>
             <section className={`options ${toggle ? 'invisible' : ''}`}>
                 {props.playerCount.map((count, index) => (
-                    <button className='drop-btns' onClick={() => handleCount(count)} key={index}>{count}</button>
+                    <button className={`drop-btns ${props.selectedPlayerCount === count ? 'active' : '' }`} 
+                    onClick={() => handleCount(count)} key={index}>{count}</button>
                 ))}
             </section>
         </section>

@@ -46,7 +46,8 @@ export default function DropdownRating(props) {
             </button>
             <section className={`options ${toggle ? 'invisible' : ''}`}>
                 {props.ratings.map((rating, index) => (
-                    <button className='drop-btns' onClick={() => handleRating(rating)} key={index}>{rating}</button>
+                    <button className={`drop-btns ${props.selectedRating === rating ? 'active' : '' }`} 
+                    onClick={() => handleRating(rating)} key={index}>{rating}</button>
                 ))}
             </section>
         </section>
