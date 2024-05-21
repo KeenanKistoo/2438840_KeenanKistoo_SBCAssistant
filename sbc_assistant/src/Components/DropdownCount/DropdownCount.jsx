@@ -47,7 +47,7 @@ import '../DropdownCount/DropdownCount.css'
             </button>
             <section className={`options ${toggle ? 'invisible' : ''}`}>
                 {props.playerCount.map((count, index) => (
-                    <button onClick={() => handleCount(count)} key={index}>{count}</button>
+                    <button className='drop-btns' onClick={() => handleCount(count)} key={index}>{count}</button>
                 ))}
             </section>
         </section>

@@ -16,6 +16,7 @@ function Assistant() {
         <>
             <section className='ass-bg'></section>
             <main className="assist-sect">
+              <section className="selection">
                 <section className="rating-select-sect">
                     <h3 className="sub-head">Select SBC Rating:</h3>
                     <DropdownRating
@@ -23,14 +24,16 @@ function Assistant() {
                         setSelectedRating={setSelectedRating}
                         selectedRating={selectedRating}
                     />
-                  </section>
-                  <section className="count-select-sect">
+                </section>
+                    <section className="count-select-sect">
+                  <h3 className="sub-head" id='avail-head'>Select No. of Available Players:</h3>
                     <DropdownCount
                       playerCount={playerCount}
                       setSelectedPlayerCount={setSelectedPlayerCount}
                       selectedPlayerCount = {selectedPlayerCount}
                     />
                   </section>
+                </section>
             </main>
         </>
     );
