@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-
+import '../Assistant/Assistant.css'
 export default class Assistant extends Component {
   render() {
     return (
-      <div>Assistant</div>
+      <section className='ass-bg'></section>
     )
   }
 }

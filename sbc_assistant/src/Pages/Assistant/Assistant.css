@@ -1,0 +1,17 @@
+section.ass-bg{
+    
+        width: 100vw;
+        height: 100vh;
+        background-image: url('../../images/haaland_bg_num.jpg');
+        background-size: cover;
+        background-position: center -15%; /* Adjust the vertical position */
+        background-attachment: fixed; /* Keeps the background image fixed */
+        margin: 0; /* Remove any margin */
+        filter: brightness(40%);
+        z-index: -1; /* Ensure the background is behind other elements */
+        position: fixed; /* Ensure the background is positioned fixed */
+        top: 0; /* Align to the top of the viewport */
+        left: 0; /* Align to the left of the viewport */
+        background-repeat: no-repeat;
+}
+    
