@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/2438840_KeenanKistoo_SBCAssistant/static/css/main.2b111a4b.css",
-    "main.js": "/2438840_KeenanKistoo_SBCAssistant/static/js/main.77652a7a.js",
+    "main.css": "/2438840_KeenanKistoo_SBCAssistant/static/css/main.3c9cec5b.css",
+    "main.js": "/2438840_KeenanKistoo_SBCAssistant/static/js/main.e05f10db.js",
     "static/js/453.4964dcc5.chunk.js": "/2438840_KeenanKistoo_SBCAssistant/static/js/453.4964dcc5.chunk.js",
     "static/media/chiesa_bg.png": "/2438840_KeenanKistoo_SBCAssistant/static/media/chiesa_bg.622ffe5e71d6e6057c4b.png",
     "static/media/haaland_bg_num.jpg": "/2438840_KeenanKistoo_SBCAssistant/static/media/haaland_bg_num.e45dc5d2707f0453d0b2.jpg",
     "index.html": "/2438840_KeenanKistoo_SBCAssistant/index.html",
-    "main.2b111a4b.css.map": "/2438840_KeenanKistoo_SBCAssistant/static/css/main.2b111a4b.css.map",
-    "main.77652a7a.js.map": "/2438840_KeenanKistoo_SBCAssistant/static/js/main.77652a7a.js.map",
+    "main.3c9cec5b.css.map": "/2438840_KeenanKistoo_SBCAssistant/static/css/main.3c9cec5b.css.map",
+    "main.e05f10db.js.map": "/2438840_KeenanKistoo_SBCAssistant/static/js/main.e05f10db.js.map",
     "453.4964dcc5.chunk.js.map": "/2438840_KeenanKistoo_SBCAssistant/static/js/453.4964dcc5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b111a4b.css",
-    "static/js/main.77652a7a.js"
+    "static/css/main.3c9cec5b.css",
+    "static/js/main.e05f10db.js"
   ]
 }
