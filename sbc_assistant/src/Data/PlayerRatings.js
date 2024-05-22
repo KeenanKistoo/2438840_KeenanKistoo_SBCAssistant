@@ -50,3 +50,5 @@ let playerInput = [
         rating: 0
     }
 ]
+
+export default playerInput;
