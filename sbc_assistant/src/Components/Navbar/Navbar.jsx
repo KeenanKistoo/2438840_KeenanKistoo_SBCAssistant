@@ -12,7 +12,7 @@ function Navbar() {
             <Link className='link' to='/blog'>Blog</Link>
             <Link className='link' to='/art'>Art</Link>
             <Link className='link' id='assist-link' to='/assistant'>Assistant</Link>
-        
+            
     </nav>
   )
 }

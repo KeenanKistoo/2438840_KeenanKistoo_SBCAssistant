@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import '../Assistant/Assistant.css';
 import DropdownRating from '../../Components/DropdownRating/DropdownRating';
 import DropdownCount from '../../Components/DropdownCount/DropdownCount';
-import Confirm from '../../Components/Confirm/Confirm';
+import PlayerCard from '../../images/simple_card.png'
+//import PlayerRatings from '../../Data/PlayerRatings'
 
 function Assistant() {
     //Rating controllers
@@ -13,6 +14,8 @@ function Assistant() {
     const playerCount = [1,2,3,4,5,6,7,8,9,10]; //List of available playerCount inputs
     const [selectedPlayerCount, setSelectedPlayerCount] = useState(null); //Controls when/if player count is selected
 
+
+    
     return (
         <>
             <section className='ass-bg'></section>
@@ -35,10 +38,23 @@ function Assistant() {
                     />
                   </section>
                 </section>
-                <Confirm
-                  selectedRating={selectedRating}
-                  selectedPlayerCount={selectedPlayerCount}
-                />
+                <section className={`confirm-tab ${selectedRating !== null || selectedPlayerCount != null ? '' : 'invisible'}`}>
+                    <p className={`player-input-txt ${selectedRating !== null ? '' : 'invisible'}`}>
+                      {`Selected SBC Rating:  ${+ selectedRating} `}
+                    </p>
+                    <p className={`player-input-txt ${selectedPlayerCount !== null ? '' : 'invisible'}`}>
+                    {`Available Players:  ${+ selectedPlayerCount} `}
+                    </p>
+                    <button onClick={() => console.log("test")} className={`confirm-btn ${selectedRating !== null && selectedPlayerCount != null ? '' : 'invisible'}`}>
+                      Confirm
+                    </button>
+                </section>
+                <table className="input-cards">
+                  <td className="card-container">
+                    <img className='card' src={PlayerCard} alt="Player Card Background For Input" />
+                    <input className='card-input' type="text" placeholder='0' />
+                  </td>
+                </table>
             </main>
         </>
     );

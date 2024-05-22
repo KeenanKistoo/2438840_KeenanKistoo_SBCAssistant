@@ -48,4 +48,78 @@ h3#avail-head{
 button.toggle{
     height: 4rem;
 }
+/* Card Positioning was fixed by ChatGPT. I had an error where the input was being placed in the centre but in the baseline
+instead of the centre. I did not realise that I did not specify how many rows. The card was taking up one row and the input
+was taking up another. */
+table.input-cards {
+    background-color: black;
+    width: 90%;
+    height: auto;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columns */
+    grid-template-rows: 1fr; /* 1 row */
+}
 
+td.card-container {
+    position: relative; /* Enable positioning of child elements */
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 80%;
+    height: 100%;
+}
+
+.card-input {
+    position: absolute; /* Absolute positioning within the container */
+    font-size: 2rem;
+    width: 3rem;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the input */
+}
+
+section.confirm-tab{
+    background-color: black;
+    color: white;
+    width: 20vw;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    padding: 0.3rem;
+}
+
+p.player-input-txt{
+    text-align: center;
+}
+
+button.confirm-btn{
+    background-color: rgb(0, 226, 0);
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 1.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+button.confirm-btn:hover{
+    cursor: pointer;
+    background-color: rgba(0, 226, 0, 0.588);;
+}
+
+.invisible{
+    transition: 0.2s ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
