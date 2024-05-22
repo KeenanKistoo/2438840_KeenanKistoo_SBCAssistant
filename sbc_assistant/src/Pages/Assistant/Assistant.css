@@ -132,6 +132,33 @@ button.confirm-btn:hover {
     background-color: rgba(0, 226, 0, 0.588);
 }
 
+
+section.confirm-input {
+    background-color: black;
+    width: 15rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+button.confirm-input-btn {
+    margin: 0 auto; /* Center the button */
+    width: 80%;
+    height: 80%;
+    background-color: rgb(0, 226, 0);
+}
+
+button.confirm-input-btn:hover {
+    cursor: pointer;
+    background-color: rgba(0, 226, 0, 0.588);
+}
+
+/* Always needs to be at the bottom of CSS sheet
+If it is anywhere else, the other styling will overwrite it */
 .invisible {
     transition: 0.2s ease-out;
     opacity: 0;
