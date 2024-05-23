@@ -36,7 +36,7 @@ import '../DropdownCount/DropdownCount.css'
     function handleCount(count) {
         props.setSelectedPlayerCount(count); // Use props.setSelectedRating to update state
         handleToggle();
-        console.log(count);
+        //console.log(count);
     }
 
     return (

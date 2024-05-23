@@ -35,7 +35,7 @@ export default function DropdownRating(props) {
     function handleRating(rating) {
         props.setSelectedRating(rating); // Use props.setSelectedRating to update state
         handleToggle();
-        console.log(rating);
+        //console.log(rating);
     }
 
     return (

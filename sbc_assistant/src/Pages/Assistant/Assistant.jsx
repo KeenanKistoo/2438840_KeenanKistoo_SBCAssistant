@@ -18,6 +18,9 @@ function Assistant() {
     const initialPlayerInput = [...PlayerRatings]; // Copy the initial state
     const [updatedPlayerInput, setUpdatedPlayerInput] = useState(initialPlayerInput); // State to hold updated player input
 
+    //Check if tool can activate
+    const [toolAvail, setToolAvail] = useState(false);
+
 
     // Function to update restricted status based on selectedPlayerCount
     function RestrictionCheck() {
@@ -30,48 +33,51 @@ function Assistant() {
     };
 
     function handleInputFields(){
-      console.log("working")
-      const copyPlayerInputs = [...updatedPlayerInput]
-      let resCount = 0;
-
-      for(let j = 0; j < copyPlayerInputs.length; j++){
-        if(copyPlayerInputs[j].restricted){
-            resCount++;
-        }
-      }
-
-      for (let i = 0; i < copyPlayerInputs.length; i++) {
-        if (copyPlayerInputs[i].restricted && copyPlayerInputs[i].rating >= 80) {
-          if (i < resCount) {
-            console.log("Check can happen");
-            console.log("res count" + resCount);
-            console.log(copyPlayerInputs)
-          } else {
-            break; // Exit the loop if i is greater than or equal to resCount
-          }
-        } else if(copyPlayerInputs[i].restricted && copyPlayerInputs[i].rating < 80) {
-          console.log("Check cannot happen");
-        }
-      }
+        //console.log("working");
+        const copyPlayerInputs = [...updatedPlayerInput];
+        let inputTrack = 0;
+            for(let i = 0; i < copyPlayerInputs.length; i++){
+                   if(copyPlayerInputs[i].rating >= 80 && copyPlayerInputs[i].complete){
+                        inputTrack++;
+                    }
+            }
+            if(inputTrack === selectedPlayerCount){
+                setToolAvail(true);
+                console.log("tool is available");
+            }else{
+                alert("Please fill in all input spaces.")
+                //console.log("tool is not available");
+                //console.log("Player Count: " + selectedPlayerCount + " -" + "inputTrack: " + inputTrack);
+            }
       
     }
 
     function handleUpdatedPlayerInput(e, index) {
       const value = e.target.value; //Input value from input field.
+      const updatedPlayers = [...updatedPlayerInput]; //Copy of the array to allow changes.
       if (value.length === 2) /*Check if the number of characters is 2. If not do not run the function. */ {
           if (parseInt(value, 10) < 80) {
               alert("Input needs to be 80 or higher"); //If value is less that 80, alert the user. If it is lower than 80 chances of success will be significantly less or zero.
               e.target.value = ""; // Clear the input
+              
           } else {
-              const updatedPlayers = [...updatedPlayerInput]; //Copy of the array to allow changes.
+              
               updatedPlayers[index] = {
                   ...updatedPlayers[index], //Spreads the current properties
-                  rating: parseInt(value, 10) //Input is a string, need to convert it to an int
+                  rating: parseInt(value, 10), //Input is a string, need to convert it to an int
+                  complete: true //Sets the complete property to state whether the tool can be activated or not
               };
+
+              
               setUpdatedPlayerInput(updatedPlayers);
               console.log(updatedPlayers); //Sets the actual array to mirror the updated one       
               //handleInputFields(e)      
           }
+      }else{
+        updatedPlayers[index].complete = false; /*This line detects changes and sets the complete property to false if changes are made
+        to ensure that the tool is not falsely available. 
+        */
+        //console.log(updatedPlayers);
       }
   }
 
