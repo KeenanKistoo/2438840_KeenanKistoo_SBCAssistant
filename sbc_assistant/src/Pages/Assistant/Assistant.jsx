@@ -97,7 +97,7 @@ function Assistant() {
             copyPlayerRatings[i].altered = false;
         }
         if (!copyPlayerRatings[i].restricted) {
-            copyPlayerRatings[i].rating = selectedRating; //Optimise this line of code
+            copyPlayerRatings[i].rating = 80; //Optimise this line of code
         }
         sum += copyPlayerRatings[i].rating;
     }
