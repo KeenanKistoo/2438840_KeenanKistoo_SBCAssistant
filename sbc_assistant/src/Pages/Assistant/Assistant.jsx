@@ -43,7 +43,7 @@ function Assistant() {
             }
             if(inputTrack === selectedPlayerCount){
                 setToolAvail(true);
-                console.log("tool is available");
+                console.log("tool is available"); //AverageCheck()
             }else{
                 alert("Please fill in all input spaces.")
                 //console.log("tool is not available");
@@ -81,8 +81,17 @@ function Assistant() {
       }
   }
 
+    function AverageTest(copyPlayerInputs){
+        //1 Set Unrestricted Values to Desired rating
 
 
+        //2 Make sure all values are greater than 80
+            //3 Calculate the average
+
+        //If avg is greater than desired - reduce
+
+        //Else if Avg is lower than desired - increased
+    }
     return (
         <>
             <section className='ass-bg'></section>
