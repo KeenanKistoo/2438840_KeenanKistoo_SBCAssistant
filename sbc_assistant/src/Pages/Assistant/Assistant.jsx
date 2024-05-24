@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Assistant/Assistant.css';
 import DropdownRating from '../../Components/DropdownRating/DropdownRating';
 import DropdownCount from '../../Components/DropdownCount/DropdownCount';
@@ -43,10 +43,11 @@ function Assistant() {
             }
             if(inputTrack === selectedPlayerCount){
                 setToolAvail(true);
-                console.log("tool is available"); //AverageCheck()
+                console.log("Tool is available")
+                AverageCalculation();
             }else{
                 alert("Please fill in all input spaces.")
-                //console.log("tool is not available");
+                console.log("tool is not available");
                 //console.log("Player Count: " + selectedPlayerCount + " -" + "inputTrack: " + inputTrack);
             }
       
@@ -70,7 +71,7 @@ function Assistant() {
 
               
               setUpdatedPlayerInput(updatedPlayers);
-              console.log(updatedPlayers); //Sets the actual array to mirror the updated one       
+              //console.log(updatedPlayers); //Sets the actual array to mirror the updated one       
               //handleInputFields(e)      
           }
       }else{
@@ -80,18 +81,73 @@ function Assistant() {
         //console.log(updatedPlayers);
       }
   }
-
-    function AverageTest(copyPlayerInputs){
-        //1 Set Unrestricted Values to Desired rating
-
-
-        //2 Make sure all values are greater than 80
-            //3 Calculate the average
-
-        //If avg is greater than desired - reduce
-
-        //Else if Avg is lower than desired - increased
+  function AverageCalculation() {
+    let copyPlayerRatings = [...updatedPlayerInput];
+    let sum = 0;
+    let average = 0;
+    let roundedAverage = 0;
+    let count = copyPlayerRatings.length - 1;
+    
+    // Initialize properties if they don't exist
+    for (let i = 0; i < copyPlayerRatings.length; i++) {
+        if (typeof copyPlayerRatings[i].restricted === 'undefined') {
+            copyPlayerRatings[i].restricted = false;
+        }
+        if (typeof copyPlayerRatings[i].altered === 'undefined') {
+            copyPlayerRatings[i].altered = false;
+        }
+        if (!copyPlayerRatings[i].restricted) {
+            copyPlayerRatings[i].rating = selectedRating; //Optimise this line of code
+        }
+        sum += copyPlayerRatings[i].rating;
     }
+
+    average = sum / copyPlayerRatings.length;
+    roundedAverage = Math.round(average);
+    
+    // If the rounded average is less than the selected rating, adjust the last player's rating
+    while (roundedAverage < selectedRating) {
+        // Ensure count is within bounds
+        if (count < 0) {
+            count = copyPlayerRatings.length - 1;
+            console.log("reset");
+            for(let i = 0; i < copyPlayerRatings.length; i++){
+                if(!copyPlayerRatings[i].restricted){
+                    copyPlayerRatings[i].altered = false;
+                }
+            }
+        }
+
+        if (!copyPlayerRatings[count].restricted && !copyPlayerRatings[count].altered) {
+            copyPlayerRatings[count].rating++;
+            copyPlayerRatings[count].altered = true;
+        } else {
+            count--;
+            continue; // Skip to the next iteration to avoid recalculating prematurely
+        }
+
+        // Recalculate the sum, average, and rounded average
+        sum = 0;
+        for (let i = 0; i < copyPlayerRatings.length; i++) {
+            sum += copyPlayerRatings[i].rating;
+        }
+        
+        average = sum / copyPlayerRatings.length;
+        roundedAverage = Math.round(average);
+
+        // Log the updated values
+        console.log("Sum=" + sum);
+        console.log("Avg=" + average);
+        console.log("Rounded Avg=" + roundedAverage);
+    }
+
+    console.log(copyPlayerRatings);
+    console.log("Avg=" + average);
+    console.log("Rounded Avg=" + roundedAverage);
+}
+
+    
+       
     return (
         <>
             <section className='ass-bg'></section>
