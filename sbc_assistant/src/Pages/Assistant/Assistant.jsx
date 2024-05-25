@@ -3,7 +3,8 @@ import '../Assistant/Assistant.css';
 import DropdownRating from '../../Components/DropdownRating/DropdownRating';
 import DropdownCount from '../../Components/DropdownCount/DropdownCount';
 import PlayerCard from '../../images/simple_card.png';
-import PlayerRatings from '../../Data/PlayerRatings';
+import PlayerRatings from '../../Data/PlayerRatings';   
+
 
 function Assistant() {
     // Rating controllers
@@ -21,6 +22,11 @@ function Assistant() {
     //Check if tool can activate
     const [toolAvail, setToolAvail] = useState(false);
 
+    //Handle Display Data for Editing
+    const [select, setSelect] = useState(true); /*  This determines which step in the selection process the user is at 
+                                                    If they are selecting ratings, inputs are inactive, if they are 
+                                                    inputting players, selection is inactive*/
+
 
     // Function to update restricted status based on selectedPlayerCount
     function RestrictionCheck() {
@@ -30,7 +36,12 @@ function Assistant() {
         }));
 
         setUpdatedPlayerInput(updatedPlayers);
+        handleSelect();
     };
+
+    function handleSelect(){
+        setSelect(!select);
+    }
 
     function handleInputFields(){
         //console.log("working");
@@ -152,7 +163,7 @@ function Assistant() {
         <>
             <section className='ass-bg'></section>
             <main className="assist-sect">
-                <section className="selection">
+                <section className={`selection ${select ? "" : "invisible"}`}>
                     <section className="rating-select-sect">
                         <h3 className="sub-head">Select SBC Rating:</h3>
                         <DropdownRating
@@ -181,7 +192,7 @@ function Assistant() {
                         />
                     </section>
                 </section>
-                <table className='table-cards'>
+                <table className={`table-cards ${select ? "invisible" : ""}`}>
                     <tbody className="input-cards">
                         {updatedPlayerInput.map((player, index) => (
                             player.restricted && (
@@ -201,8 +212,9 @@ function Assistant() {
                         ))}
                     </tbody>
                 </table>
-                <section className='confirm-input'>
-                  <button onClick={() => handleInputFields()}className='confirm-input-btn'>Find Required Player Ratings</button>
+                <section className={`confirm-input ${select ? "invisible" : ""}`}>
+                    <button onClick={() => handleSelect()}className='edit-input-btn'>Edit Requirements</button>
+                    <button onClick={() => handleInputFields()}className='confirm-input-btn'>Find Required Player Ratings</button>
                 </section>
             </main>
         </>

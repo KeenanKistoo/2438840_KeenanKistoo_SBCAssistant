@@ -1,0 +1,15 @@
+section.theory-bg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../images/football_tactic_board.jpg');
+    background-size: cover;
+    background-position: center -15%; /* Adjust the vertical position */
+    background-attachment: fixed; /* Keeps the background image fixed */
+    margin: 0;
+    filter: brightness(50%);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-repeat: repeat;
+}
