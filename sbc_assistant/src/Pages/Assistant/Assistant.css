@@ -168,6 +168,18 @@ button.edit-input-btn:hover{
     cursor: pointer;
     background-color: rgba(223, 186, 0, 0.734);
 }
+
+h2.rating-noti{
+    width: 100%;
+    background-color: black;
+    margin-top: -5rem;
+    color: white;
+    text-align: center;
+}
+h2#count-noti{
+    margin-top: -1.3rem;
+    margin-bottom: -1rem;
+}
 /* Always needs to be at the bottom of CSS sheet
 If it is anywhere else, the other styling will overwrite it */
 .invisible {

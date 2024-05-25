@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../Assistant/Assistant.css';
 import DropdownRating from '../../Components/DropdownRating/DropdownRating';
 import DropdownCount from '../../Components/DropdownCount/DropdownCount';
@@ -93,10 +93,10 @@ function Assistant() {
       }
   }
   function AverageCalculation() {
-    let copyPlayerRatings = [...updatedPlayerInput];
+    let copyPlayerRatings = [...updatedPlayerInput]; 
     let sum = 0;
     let average = 0;
-    let roundedAverage = 0;
+    let roundedAverage = 0; 
     let count = copyPlayerRatings.length - 1;
     
     // Initialize properties if they don't exist
@@ -110,11 +110,11 @@ function Assistant() {
         if (!copyPlayerRatings[i].restricted) {
             copyPlayerRatings[i].rating = 80; //Optimise this line of code
         }
-        sum += copyPlayerRatings[i].rating;
+        sum += copyPlayerRatings[i].rating; //Creating an initial total
     }
 
-    average = sum / copyPlayerRatings.length;
-    roundedAverage = Math.round(average);
+    average = sum / copyPlayerRatings.length; //Initial Average
+    roundedAverage = Math.round(average); //Round off the initial average
     
     // If the rounded average is less than the selected rating, adjust the last player's rating
     while (roundedAverage < selectedRating) {
@@ -153,8 +153,9 @@ function Assistant() {
     }
 
     console.log(copyPlayerRatings);
-    console.log("Avg=" + average);
-    console.log("Rounded Avg=" + roundedAverage);
+    //console.log("Avg=" + average);
+    //console.log("Rounded Avg=" + roundedAverage);
+    setUpdatedPlayerInput(copyPlayerRatings); //Update the Player Ratings to ensure the correct data is displayed.
 }
 
     
@@ -193,6 +194,8 @@ function Assistant() {
                     </section>
                 </section>
                 <table className={`table-cards ${select ? "invisible" : ""}`}>
+                    <h2 className='rating-noti'>{"Selected Rating: " + selectedRating}</h2>
+                    <h2 className='rating-noti' id='count-noti'>{"Players Availble In Your Club: " + selectedPlayerCount}</h2>
                     <tbody className="input-cards">
                         {updatedPlayerInput.map((player, index) => (
                             player.restricted && (
