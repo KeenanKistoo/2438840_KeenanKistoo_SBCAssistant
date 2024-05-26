@@ -3,7 +3,7 @@ import '../DisplayData/DisplayData.css'
 import DisplayRatings from '../../Data/DisplayRatings'
 
 function DisplayData(props) {
-  const { selectedRating, requiredRatings } = props;
+  const { selectedRating, requiredRatings, showDisplay } = props;
   
   //Display Ratings.jsx 
   const [displayRatings, setDisplayRatings] = useState([...DisplayRatings]);
@@ -26,14 +26,14 @@ function DisplayData(props) {
 
   return (
     <>
-      <section className='display'>
+      <section className={`display`}>
         <h3 className='sub-table-head'>Suggested Players For Your {selectedRating} Rated Team:</h3>
         {Object.keys(ratingCounts).map((rating, index) => (
           <p key={index} className="byline">
             You require: {ratingCounts[rating]}X {rating} Rated Players
           </p>
         ))}
-        <table className="display-table">
+        <table className={'display-table'}>
           <thead className="table-head">
             <tr>
               <th>Player Name</th>

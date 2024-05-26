@@ -27,6 +27,9 @@ function Assistant() {
     //Required Ratings
     const [requiredRatings, setRequiredRatings] = useState([]);
 
+    //Show Display
+    const [showDisplay, setShowDisplay] = useState(false);
+
 
     // Function to update restricted status based on selectedPlayerCount
     function RestrictionCheck() {
@@ -37,6 +40,7 @@ function Assistant() {
 
         setUpdatedPlayerInput(updatedPlayers);
         handleSelect();
+        setShowDisplay(false);
     };
 
     function handleSelect(){
@@ -55,6 +59,7 @@ function Assistant() {
             if(inputTrack === selectedPlayerCount){
                 console.log("Tool is available")
                 AverageCalculation();
+                setShowDisplay(true);
             }else{
                 alert("Please fill in all input spaces.")
                 console.log("tool is not available");
@@ -171,7 +176,7 @@ useEffect(() => {
         <>
             <section className='ass-bg'></section>
             <main className="assist-sect">
-                <section className={`selection ${select ? "" : "invisible"}`}>
+                <section className={`selection ${select || showDisplay? "" : "invisible"}`}>
                     <section className="rating-select-sect">
                         <h3 className="sub-head">Select SBC Rating:</h3>
                         <DropdownRating
@@ -200,7 +205,7 @@ useEffect(() => {
                         />
                     </section>
                 </section>
-                <section className={`table-sect ${select ? "invisible" : ""}`}>
+                <section className={`table-sect ${select ? "invisible" : "" || showDisplay ? "invisible" : ""}`}>
                     <h2 className='rating-noti'>{"Selected Rating: " + selectedRating}</h2>
                     <h2 className='rating-noti' id='count-noti'>{"Players Available In Your Club: " + selectedPlayerCount}</h2>
 
@@ -225,7 +230,7 @@ useEffect(() => {
                         </tbody>
                     </table>
                 </section>
-                <section className={`confirm-input ${select ? "invisible" : ""}`}>
+                <section className={`confirm-input ${select || showDisplay? "invisible" : ""}`}>
                     <button onClick={() => handleSelect()}className='edit-input-btn'>Edit Requirements</button>
                     <button onClick={() => handleInputFields()}className='confirm-input-btn'>Find Required Player Ratings</button>
                 </section>
