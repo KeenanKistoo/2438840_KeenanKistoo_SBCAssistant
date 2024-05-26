@@ -61,7 +61,7 @@ function Assistant() {
                 AverageCalculation();
                 setShowDisplay(true);
             }else{
-                alert("Please fill in all input spaces.")
+                alert("Please fill in all input spaces. If input spaces are filled out but the players are not being generated, please re-enter the player inputs. Sorry for this bug")
                 console.log("tool is not available");
                 //console.log("Player Count: " + selectedPlayerCount + " -" + "inputTrack: " + inputTrack);
             }

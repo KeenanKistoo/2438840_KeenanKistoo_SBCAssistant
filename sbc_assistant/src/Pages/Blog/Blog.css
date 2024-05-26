@@ -35,3 +35,37 @@ h2.sub{
     padding: 0.5rem;
     margin-bottom: -1rem;
 }
+
+#final-frame{
+    margin-bottom: 5rem;
+}
+
+section.filter{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    width: 50vw;
+    height: auto;
+    padding: 1rem;
+    background-color:  rgba(0, 0, 0, 0.882);
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+button.filter-btn{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+}
+button.filter-btn:hover{
+    cursor: pointer;
+    background-color: rgb(62, 62, 62);
+}
+
+.active{
+    background-color: rgb(62, 62, 62);
+}

@@ -1,9 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
+import DesignComp from '../../Components/DesignComp/DesignComp'
+import '../Design/Design.css'
 
-export default class Design extends Component {
-  render() {
+function Design() {
+
     return (
-      <div>Design</div>
+      <>
+      <section className='des-bg'></section>
+      <main>        
+        <DesignComp/> 
+      </main>
+      </>
     )
   }
-}
+export default Design

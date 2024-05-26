@@ -1,0 +1,40 @@
+section.des-bg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../images/eafc_bg.webp');
+    background-size: cover;
+    background-position: center -15%; /* Adjust the vertical position */
+    background-attachment: fixed; /* Keeps the background image fixed */
+    margin: 0;
+    filter: brightness(100%);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-repeat: repeat;
+}
+
+main{
+    background-color: rgba(0, 0, 0, 0.853);
+    color: white;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    padding: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+a{
+    color: aquamarine;
+}
+
+ul{
+    list-style: none;
+    
+}
+
+li{
+    margin-top: 1rem;
+}
