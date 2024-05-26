@@ -1,0 +1,54 @@
+/* Thumbnail.css */
+.thumb-img {
+    width: auto; /* Set your desired width */
+    height: auto; /* Set your desired height */
+    max-width: 15rem;
+    max-height: 15rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(77, 77, 77); /* Fallback color if the image doesn't load */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .thumb-img .alt-text {
+    color: red; /* Set your desired alt text color */
+    font-size: 16px; /* Set your desired font size */
+    display: none; /* Hide the alt text by default */
+  }
+  
+  .thumb-img:empty .alt-text {
+    display: block; /* Show the alt text if the image is not available */
+  }
+  
+  .link-btn{
+    width: 15rem;
+  }
+
+  .link-btn:hover{
+    cursor: pointer;
+  }
+
+  .date{
+    color: white;
+    font-style: italic;
+  }
+
+  article.entry{
+    width: 16rem;
+    border: white 1px solid;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    padding-bottom: 0.2rem;
+    text-align: center;
+  }
+
+  h3.head-blog{
+    color: white;
+    text-overflow: clip;
+}
