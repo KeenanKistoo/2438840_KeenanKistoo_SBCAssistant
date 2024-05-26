@@ -35,6 +35,8 @@ function DesignComp() {
       <p>
         I read a blog on how to build websites to be responsive without the use of excessive media queries. There was a lot of emphasis on using measurement variables like rem, vw, vh, and auto sizing heights. This is something that I always struggle with and generally avoid when submitting. Using these suggestions, the majority of the webapp, excluding the navigation bar, is readable and responsive through desktop and tablets.
       </p>
+      <h2>Communication</h2>
+      <p>I do think this is something that needs to improve. User gets feedback when they hover over all the buttons but they do not really get any feedback on what page they are on. I do have code for this but it just is not working. I honestly thought it would be an easy addition and left it to the last but as always, it backfired on me.</p>
       <h2>Short Code Reflection:</h2>
       <p>I tried my best to make my webapp accessible to screen readers. I kept to a standard: {`nav > main`} formatting across the pages. However, I have used a {'<table>'} tag this time around for a few elements and it worked well. I initially, stuck to basic tags because I thought it was easier to carry CSS across pages. Now, that I see that using different tags not only make my webapp’s more accessible but also breaks down different parts of my code effectively. I came to this realisation when I went through the YouTube inspector tab to access thumbnail images. I was shocked how quickly I found them by following a sematic order than I found online. </p>
     </>

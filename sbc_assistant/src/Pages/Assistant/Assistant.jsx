@@ -232,8 +232,9 @@ useEffect(() => {
                 </section>
                 <section className={`confirm-input ${select || showDisplay? "invisible" : ""}`}>
                     <button onClick={() => handleSelect()}className='edit-input-btn'>Edit Requirements</button>
-                    <button onClick={() => handleInputFields()}className='confirm-input-btn'>Find Required Player Ratings</button>
+                    <button onClick={() => handleInputFields()}className='confirm-input-btn'>Find Required Player Ratings</button>   
                 </section>
+                <p className='note'>If you click on 'Find Required Player Ratings' please scroll to see the players</p>
                 <DisplayData
                 selectedRating={selectedRating}
                 requiredRatings={requiredRatings}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import BlogEntry from '../../Components/BlogEntries/BlogEntry';
 import '../Blog/Blog.css';
 import PatchNotes from '../../Data/PatchNotes';

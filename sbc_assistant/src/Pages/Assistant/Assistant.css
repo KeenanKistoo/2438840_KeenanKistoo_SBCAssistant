@@ -14,6 +14,10 @@ section.ass-bg {
     background-repeat: no-repeat;
 }
 
+main.assist-sect{
+    background-color: none;
+}
+
 section.selection {
     width: 90vw;
     height: auto;
@@ -188,4 +192,13 @@ If it is anywhere else, the other styling will overwrite it */
     transition: 0.2s ease-out;
     opacity: 0;
     visibility: hidden;
+}
+
+.note{
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.892);
+    width: 80vw;
+    padding: 1rem;
 }
