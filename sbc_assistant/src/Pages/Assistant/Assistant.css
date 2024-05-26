@@ -170,15 +170,17 @@ button.edit-input-btn:hover{
 }
 
 h2.rating-noti{
-    width: 100%;
+    width: 54.38%;
     background-color: black;
     margin-top: -5rem;
+    margin-left: auto;
+    margin-right: auto;
     color: white;
     text-align: center;
 }
 h2#count-noti{
     margin-top: -1.3rem;
-    margin-bottom: -1rem;
+    margin-bottom: -1.2rem;
 }
 /* Always needs to be at the bottom of CSS sheet
 If it is anywhere else, the other styling will overwrite it */

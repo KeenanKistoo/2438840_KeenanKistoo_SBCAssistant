@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Assistant/Assistant.css';
 import DropdownRating from '../../Components/DropdownRating/DropdownRating';
 import DropdownCount from '../../Components/DropdownCount/DropdownCount';
 import PlayerCard from '../../images/simple_card.png';
 import PlayerRatings from '../../Data/PlayerRatings';   
-
+import DisplayData from '../../Components/DisplayData/DisplayData';
 
 function Assistant() {
     // Rating controllers
@@ -19,13 +19,13 @@ function Assistant() {
     const initialPlayerInput = [...PlayerRatings]; // Copy the initial state
     const [updatedPlayerInput, setUpdatedPlayerInput] = useState(initialPlayerInput); // State to hold updated player input
 
-    //Check if tool can activate
-    const [toolAvail, setToolAvail] = useState(false);
-
     //Handle Display Data for Editing
     const [select, setSelect] = useState(true); /*  This determines which step in the selection process the user is at 
                                                     If they are selecting ratings, inputs are inactive, if they are 
                                                     inputting players, selection is inactive*/
+
+    //Required Ratings
+    const [requiredRatings, setRequiredRatings] = useState([]);
 
 
     // Function to update restricted status based on selectedPlayerCount
@@ -53,7 +53,6 @@ function Assistant() {
                     }
             }
             if(inputTrack === selectedPlayerCount){
-                setToolAvail(true);
                 console.log("Tool is available")
                 AverageCalculation();
             }else{
@@ -158,7 +157,15 @@ function Assistant() {
     setUpdatedPlayerInput(copyPlayerRatings); //Update the Player Ratings to ensure the correct data is displayed.
 }
 
-    
+useEffect(() => {
+    // Filter out items where restricted is false and map to get ratings
+    const newRequiredRatings = updatedPlayerInput
+      .filter(item => !item.restricted)
+      .map(item => item.rating);
+
+    // Update state with the ratings
+    setRequiredRatings(newRequiredRatings);
+  }, [updatedPlayerInput]);
        
     return (
         <>
@@ -193,32 +200,39 @@ function Assistant() {
                         />
                     </section>
                 </section>
-                <table className={`table-cards ${select ? "invisible" : ""}`}>
+                <section className={`table-sect ${select ? "invisible" : ""}`}>
                     <h2 className='rating-noti'>{"Selected Rating: " + selectedRating}</h2>
-                    <h2 className='rating-noti' id='count-noti'>{"Players Availble In Your Club: " + selectedPlayerCount}</h2>
-                    <tbody className="input-cards">
-                        {updatedPlayerInput.map((player, index) => (
+                    <h2 className='rating-noti' id='count-noti'>{"Players Available In Your Club: " + selectedPlayerCount}</h2>
+
+                    <table className={`table-cards`}>
+                        <tbody className="input-cards">
+                            {updatedPlayerInput.map((player, index) => (
                             player.restricted && (
-                                <tr key={index} className='card-row'>
-                                    <td className="card-container">
-                                        <img className='card' src={PlayerCard} alt="Player Card Background For Input" />
-                                        <input 
-                                        className='card-input'
-                                        type="text"
-                                        maxLength={2}
-                                        placeholder='0' 
-                                        onChange={(e) => handleUpdatedPlayerInput(e, index)}
-                                         />
-                                    </td>
-                                </tr>
+                            <tr key={index} className='card-row'>
+                                <td className="card-container">
+                                <img className='card' src={PlayerCard} alt="Player Card Background For Input" />
+                                 <input 
+                                className='card-input'
+                                type="text"
+                                maxLength={2}
+                                placeholder='0' 
+                                onChange={(e) => handleUpdatedPlayerInput(e, index)}
+                                />
+                                </td>
+                            </tr>
                             )
-                        ))}
-                    </tbody>
-                </table>
+                            ))}
+                        </tbody>
+                    </table>
+                </section>
                 <section className={`confirm-input ${select ? "invisible" : ""}`}>
                     <button onClick={() => handleSelect()}className='edit-input-btn'>Edit Requirements</button>
                     <button onClick={() => handleInputFields()}className='confirm-input-btn'>Find Required Player Ratings</button>
                 </section>
+                <DisplayData
+                selectedRating={selectedRating}
+                requiredRatings={requiredRatings}
+                />
             </main>
         </>
     );
