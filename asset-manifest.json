@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.css": "/2438840_KeenanKistoo_SBCAssistant/static/css/main.3c9cec5b.css",
-    "main.js": "/2438840_KeenanKistoo_SBCAssistant/static/js/main.a276f0e5.js",
+    "main.css": "/2438840_KeenanKistoo_SBCAssistant/static/css/main.f28be9a9.css",
+    "main.js": "/2438840_KeenanKistoo_SBCAssistant/static/js/main.cb97598d.js",
     "static/js/453.4964dcc5.chunk.js": "/2438840_KeenanKistoo_SBCAssistant/static/js/453.4964dcc5.chunk.js",
     "static/media/chiesa_bg.png": "/2438840_KeenanKistoo_SBCAssistant/static/media/chiesa_bg.622ffe5e71d6e6057c4b.png",
+    "static/media/eafc_imh.webp": "/2438840_KeenanKistoo_SBCAssistant/static/media/eafc_imh.fea2ea6ac83876d29baa.webp",
     "static/media/haaland_bg_num.jpg": "/2438840_KeenanKistoo_SBCAssistant/static/media/haaland_bg_num.e45dc5d2707f0453d0b2.jpg",
+    "static/media/stadium.jpg": "/2438840_KeenanKistoo_SBCAssistant/static/media/stadium.91ba190d2953b079c801.jpg",
+    "static/media/icons.jpg": "/2438840_KeenanKistoo_SBCAssistant/static/media/icons.f89fa140bb1156c5496d.jpg",
+    "static/media/nost_imgs.jpg": "/2438840_KeenanKistoo_SBCAssistant/static/media/nost_imgs.0b1ca1ee080a9fb66fb1.jpg",
+    "static/media/eafc_bg.webp": "/2438840_KeenanKistoo_SBCAssistant/static/media/eafc_bg.fa2bb18262c222d670e3.webp",
     "index.html": "/2438840_KeenanKistoo_SBCAssistant/index.html",
-    "main.3c9cec5b.css.map": "/2438840_KeenanKistoo_SBCAssistant/static/css/main.3c9cec5b.css.map",
-    "main.a276f0e5.js.map": "/2438840_KeenanKistoo_SBCAssistant/static/js/main.a276f0e5.js.map",
+    "main.f28be9a9.css.map": "/2438840_KeenanKistoo_SBCAssistant/static/css/main.f28be9a9.css.map",
+    "main.cb97598d.js.map": "/2438840_KeenanKistoo_SBCAssistant/static/js/main.cb97598d.js.map",
     "453.4964dcc5.chunk.js.map": "/2438840_KeenanKistoo_SBCAssistant/static/js/453.4964dcc5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c9cec5b.css",
-    "static/js/main.a276f0e5.js"
+    "static/css/main.f28be9a9.css",
+    "static/js/main.cb97598d.js"
   ]
 }
